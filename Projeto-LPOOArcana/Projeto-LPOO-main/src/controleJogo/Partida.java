@@ -7,9 +7,6 @@ import entidades.Oponente;
 import entidades.Feitico;
 import entidades.Encantamento;
 import entidades.Criatura;
-import exceptions.CartaNaoEncontrada;
-import exceptions.ManaInsuficiente;
-import exceptions.SemVida;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -208,6 +205,8 @@ public class Partida {
                     break;
             }
         }
+        jogador.getCampo().verificarContinuidadedoEfeito(jogador);
+        oponente.getCampo().verificarContinuidadedoEfeito(oponente);
     }
 
     public void turnoAutomatizado() {
@@ -302,6 +301,8 @@ public class Partida {
                     break;
             }
         }
+        jogador.getCampo().verificarContinuidadedoEfeito(jogador);
+        oponente.getCampo().verificarContinuidadedoEfeito(oponente);
     }
 
     private Cartas escolherCarta(Jogador jogador) {

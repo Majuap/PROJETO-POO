@@ -1,7 +1,5 @@
 package entidades;
 
-import exceptions.CartaNaoEncontrada;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Collections;

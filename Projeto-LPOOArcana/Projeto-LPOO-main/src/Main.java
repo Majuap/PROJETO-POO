@@ -2,9 +2,6 @@ import java.util.Scanner;
 import controleJogo.*;
 import controleJogo.Menu;
 import entidades.Jogador;
-import exceptions.CartaNaoEncontrada;
-import exceptions.ManaInsuficiente;
-import exceptions.SemVida;
 
 public class Main {
      public static void main(String[] args){

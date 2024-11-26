@@ -23,5 +23,16 @@ public class Encantamento extends Cartas {
                 "Custo: " + custoMana + "\n" +
                 "Descrição: " + descricao + "\n";
     }
+    public void setTurnoDoEfeitoContinuo(int i,Jogador jogador,Encantamento encantamento) {
+        if (i > 0) {
+            encantamento.aplicarEfeito();
+            this.turnodoefeitoContinuo -= i;
+        }
+        else {
+            System.out.println("Encantamento: "+nome+", seu efeito foi retirado do campo");
+            jogador.getCampo().getCemiterio().add(encantamento);
+            jogador.getCampo().getEncantamentosnoCampo().remove(encantamento);
+        }
+    }
 
 }

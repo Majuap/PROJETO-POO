@@ -1,9 +1,6 @@
 package controleJogo;
 
 import entidades.*;
-import exceptions.CartaNaoEncontrada;
-import exceptions.ManaInsuficiente;
-import exceptions.SemVida;
 
 import java.util.ArrayList;
 import java.util.List;

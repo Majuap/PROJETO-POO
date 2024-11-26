@@ -30,7 +30,18 @@ public class CampoBatalha {
                 .map(carta -> (Criatura) carta)
                 .collect(Collectors.toList());
     }
-
+    public List<Encantamento> getEncantamentosnoCampo() {
+        return campo.stream()
+                .filter(encantamento -> encantamento instanceof Encantamento)
+                .map(encantamento -> (Encantamento) encantamento)
+                .collect(Collectors.toList());
+    }
+    public void verificarContinuidadedoEfeito(Jogador jogador){
+        jogador.getCampo().getCampo().stream()
+                    .filter(encantamento -> encantamento instanceof Encantamento)
+                    .map(encantamento -> (Encantamento) encantamento)
+                    .forEach(encantamento -> encantamento.setTurnoDoEfeitoContinuo(1, jogador, encantamento));
+    }
 
     public List<Cartas> getCampo() {
         return campo;
