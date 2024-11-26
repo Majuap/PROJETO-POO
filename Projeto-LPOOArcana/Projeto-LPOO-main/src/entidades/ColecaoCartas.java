@@ -220,9 +220,11 @@ public class ColecaoCartas {
         cartas.add(new Feitico("Custos Exitus", 1,
                 "Tudo tem seu preço, mas a vitória compensa.\nEfeito: Pague 2 pontos de vida. Destrua uma carta do adversário.",
                 (Runnable) () -> {
+                    if(!oponente.getCampo().getCampo().isEmpty()){
                     jogador.setVida(jogador.getVida() - 2);
                     oponente.getCampo().getCemiterio().add(oponente.getCampo().getCampo().get(oponente.getCampo().getCampo().size()-1));
                     oponente.getCampo().getCampo().remove(oponente.getCampo().getCampo().size()-1);
+                    }
                 }
         ));
 
@@ -261,7 +263,7 @@ public class ColecaoCartas {
                 3,
                 "Efeito Continuo: Preso no ciclo da natureza, uma carta aleatória do campo do adversário é enviada ao cemitério. Em troca, o adversário ganha 1 ponto de vida por 2 turnos.",
                 (Runnable) () -> {
-                    if (!oponente.getCampo().getCampo().isEmpty()) {
+                    if (!oponente.getCampo().getCemiterio().isEmpty()) {
                         Cartas removida = oponente.getCampo().getCampo().remove(new Random().nextInt(oponente.getCampo().getCampo().size()));
                         oponente.getCampo().getCemiterio().add(removida);
                         System.out.println("O Indelével ativo: Uma carta aleatória foi enviada ao cemitério.");

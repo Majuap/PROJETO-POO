@@ -299,7 +299,7 @@ public class Menu {
                 System.out.println("Voce Perdeu!!");
                 continuaPartida = false;
             }
-            else if (oponente.getVida() == 0) {
+            if (oponente.getVida() == 0) {
                 jogador.setVida(30);
                 System.out.println("Voce Ganhou!!");
                 continuaPartida = false;
@@ -307,11 +307,11 @@ public class Menu {
                 jogador.redefinirDeck();
                 oponente.redefinirDeck();
             }
-            else if (jogador.getDeck().isEmpty()) {
+            if (jogador.getDeck().isEmpty()) {
                 System.out.println("Nao ha cartas no seu Deck, Voce perdeu!!");
                 continuaPartida = false;
             }
-            else if (oponente.getDeck().isEmpty()) {
+            if (oponente.getDeck().isEmpty()) {
                 System.out.println(oponente.getNomeJogador() + " ficou sem cartas no Deck, Voce Ganhou!!");
                 continuaPartida = false;
                 jogador.setVida(30);
